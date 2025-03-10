@@ -1,8 +1,10 @@
 import 'package:blood_bank/features/onboarding/controller/onboarding_controller.dart';
+import 'package:blood_bank/features/onboarding/presentation/widgets/next_button.dart';
+import 'package:blood_bank/features/onboarding/presentation/widgets/custom_dots.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoardingScreen extends GetView<OnboardingController> {
   const OnBoardingScreen({super.key});
 
   @override
@@ -36,29 +38,11 @@ class OnBoardingScreen extends StatelessWidget {
                   children: [
                     SizedBox(width: 10),
                     ...List.generate(
-                      3,
-                      (index) => Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: CircleAvatar(
-                          radius: 5,
-                          backgroundColor:
-                              controller.currentPage == index
-                                  ? Theme.of(context).primaryColor
-                                  : Theme.of(context).disabledColor,
-                        ),
-                      ),
+                        3,
+                            (index) =>CustomDots(index)
                     ),
                     const Spacer(),
-                    FloatingActionButton(
-                      backgroundColor: Theme.of(context).disabledColor,
-                      onPressed: () => controller.next(),
-                      child: Icon(
-                        controller.currentPage == 2
-                            ? Icons.done
-                            : Icons.arrow_forward_ios,
-                        color: Colors.white,
-                      ),
-                    ),
+                    NextButton(),
                     SizedBox(width: 10),
                   ],
                 ),
