@@ -11,9 +11,15 @@ class RegisterController extends GetxController {
 
   final formKey = GlobalKey<FormState>();
 
-  List<DropdownMenuItem<String>> genderItems = <DropdownMenuItem<String>>[
-    DropdownMenuItem<String>(value: "ذكر", child: Text("Male")),
-    DropdownMenuItem<String>(value: "انثى", child: Text("Female")),
+  List<DropdownMenuItem<String>> bloodType = <DropdownMenuItem<String>>[
+    DropdownMenuItem<String>(value: "A+", child: Text("A+")),
+    DropdownMenuItem<String>(value: "A-", child: Text("A-")),
+    DropdownMenuItem<String>(value: "B+", child: Text("B+")),
+    DropdownMenuItem<String>(value: "B-", child: Text("B-")),
+    DropdownMenuItem<String>(value: "O+", child: Text("O+")),
+    DropdownMenuItem<String>(value: "O-", child: Text("O-")),
   ];
 
+  String? selectedBloodType;
+  setSelectedBloodType(String value) => selectedBloodType = value;
 }

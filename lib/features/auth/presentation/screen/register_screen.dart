@@ -53,8 +53,10 @@ class RegisterScreen extends GetView<RegisterController> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: DropdownButton(
-                items: controller.genderItems,
-                onChanged: (v) {},
+                items: controller.bloodType,
+                onChanged: (v) {
+                  controller.setSelectedBloodType(v!);
+                },
                 value: null,
                 icon: Icon(Icons.arrow_downward),
                 isExpanded: true,
@@ -76,7 +78,13 @@ class RegisterScreen extends GetView<RegisterController> {
               iconData: Icons.lock,
             ),
             SizedBox(height: 20),
-
+            CustomTextFormField(
+              controller: controller.passwordController,
+              validator: null,
+              labelText: "تاكيد كلمة المرور",
+              iconData: Icons.lock,
+            ),
+            SizedBox(height: 20),
             InkWell(
               child: Container(
                 alignment: Alignment.center,

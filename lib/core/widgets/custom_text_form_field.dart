@@ -19,12 +19,18 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      keyboardType: TextInputType.phone,
+      keyboardType: inputType,
       validator: validator,
       decoration: InputDecoration(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         prefixIcon: Icon(iconData),
         labelText: labelText,
+        hintText: labelText,
+        hintStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 15,
+          color: Colors.grey,
+        ),
       ),
     );
   }
