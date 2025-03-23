@@ -1,11 +1,22 @@
-
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class LoginController extends GetxController{
+import '../../../core/constant/strings.dart';
+
+class LoginController extends GetxController {
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  void login(){}
-  
+  bool rememberMe = false;
+
+  void login() {
+    Get.offAllNamed(AppStrings.homeRoute);
+  }
+
+  void forgetPassword() {}
+
+  void rememberMeToggle(value) {
+    rememberMe = !rememberMe;
+    update();
+  }
 }

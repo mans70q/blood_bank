@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/constant/strings.dart';
+
 class RegisterController extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -22,4 +24,8 @@ class RegisterController extends GetxController {
 
   String? selectedBloodType;
   setSelectedBloodType(String value) => selectedBloodType = value;
+
+  void register() {
+    Get.offAllNamed(AppStrings.homeRoute);
+  }
 }

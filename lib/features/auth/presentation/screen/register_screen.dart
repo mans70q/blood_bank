@@ -1,4 +1,5 @@
 import 'package:blood_bank/features/auth/controller/register_controller.dart';
+import 'package:blood_bank/features/auth/presentation/widget/custom_submit_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/constant/strings.dart';
@@ -85,32 +86,20 @@ class RegisterScreen extends GetView<RegisterController> {
               iconData: Icons.lock,
             ),
             SizedBox(height: 20),
-            InkWell(
-              child: Container(
-                alignment: Alignment.center,
-                width: 150,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: Colors.red[600],
-                  borderRadius: BorderRadius.circular(20),
-                ),
-
-                child: Text(
-                  "تسجيل الدخول",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
+            CustomSubmitButton(
+              onTap: () => controller.register(),
+              text: "انشاء حساب",
             ),
             SizedBox(height: 50),
             Row(
               children: [
-                Text("لديك حساب بالفعل؟", style: TextStyle(fontSize: 20)),
+                Text("لديك حساب بالفعل؟"),
                 InkWell(
                   onTap: () {
                     Get.toNamed(AppStrings.loginRoute);
                   },
 
-                  child: Text("تسجيل الدخول", style: TextStyle(fontSize: 20)),
+                  child: Text(" تسجيل الدخول ", style: TextStyle(fontSize: 20)),
                 ),
               ],
             ),
