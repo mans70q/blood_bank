@@ -12,9 +12,8 @@ class LayoutScreen extends StatelessWidget {
     return GetBuilder<LayoutController>(
       builder: (controller) {
         return Scaffold(
-          body: SafeArea(
-            child: controller.screens[controller.currentIndex.value],
-          ),
+          extendBody: true,
+          body: controller.screens[controller.currentIndex.value],
           bottomNavigationBar: BottomNavigationBar(
             items: controller.items,
             currentIndex: controller.currentIndex.value,

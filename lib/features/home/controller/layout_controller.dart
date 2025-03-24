@@ -1,3 +1,4 @@
+import 'package:blood_bank/features/home/presentation/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,10 +14,7 @@ class LayoutController extends GetxController {
     BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
   ];
   List<Widget> screens = [
-    Scaffold(
-      appBar: AppBar(title: Text("Home")),
-      body: Center(child: Text("Home")),
-    ),
+    const HomeScreen(),
     Text("Profile"),
     Text("Notification"),
     Text("Settings"),

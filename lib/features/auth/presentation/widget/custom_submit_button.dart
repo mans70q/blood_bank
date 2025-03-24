@@ -18,7 +18,7 @@ class CustomSubmitButton extends StatelessWidget {
         width: 150,
         height: 40,
         decoration: BoxDecoration(
-          color: Colors.red[600],
+          color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(20),
         ),
 
