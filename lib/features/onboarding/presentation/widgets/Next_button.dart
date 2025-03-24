@@ -8,7 +8,7 @@ class NextButton extends GetView<OnboardingController> {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      backgroundColor: Theme.of(context).disabledColor,
+      backgroundColor: Theme.of(context).primaryColor,
       onPressed: () => controller.next(),
       child: Icon(
         controller.currentPage == 2
