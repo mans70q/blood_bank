@@ -61,7 +61,7 @@ class ResetPassword extends GetView<ResetPasswordController> {
                 width: 150,
                 height: 40,
                 decoration: BoxDecoration(
-                  color: Colors.red[600],
+                  color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text("ارسال", style: TextStyle(color: Colors.white)),

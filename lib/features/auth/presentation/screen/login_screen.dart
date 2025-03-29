@@ -4,6 +4,7 @@ import 'package:blood_bank/features/auth/presentation/screen/register_screen.dar
 import 'package:blood_bank/features/auth/presentation/widget/custom_submit_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../controller/login_controller.dart';
 import 'forget_password.dart';
 
@@ -55,6 +56,9 @@ class LoginScreen extends GetView<LoginController> {
                         onChanged: (val) {
                           controller.rememberMeToggle(val);
                         },
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
                       ),
                       Spacer(),
                       InkWell(
