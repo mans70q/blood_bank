@@ -7,27 +7,25 @@ class ArticleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              SearchInArticle(),
-              Expanded(
-                child: ListView.separated(
-                  physics: const BouncingScrollPhysics(),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  padding: const EdgeInsets.only(top: 20),
-                  itemCount: 5,
-                  separatorBuilder:
-                      (context, index) => const SizedBox(height: 10),
-                  itemBuilder: (context, index) => ArticleCard(),
-                ),
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+        child: Column(
+          children: [
+            SearchInArticle(),
+            Expanded(
+              child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                padding: const EdgeInsets.only(top: 20),
+                itemCount: 5,
+                separatorBuilder:
+                    (context, index) => const SizedBox(height: 10),
+                itemBuilder: (context, index) => ArticleCard(),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 
 class LayoutController extends GetxController {
   RxInt currentIndex = 0.obs;
-  List<BottomNavigationBarItem> items = [
-    BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-    BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-    BottomNavigationBarItem(
+  List<NavigationDestination> items = [
+    NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+    NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
+    NavigationDestination(
       icon: Icon(Icons.notifications),
       label: "Notification",
     ),
-    BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
+    NavigationDestination(icon: Icon(Icons.settings), label: "Settings"),
   ];
   List<Widget> screens = [
     const HomeScreen(),

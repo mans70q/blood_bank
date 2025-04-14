@@ -26,6 +26,6 @@ class RegisterController extends GetxController {
   setSelectedBloodType(String value) => selectedBloodType = value;
 
   void register() {
-    Get.offAllNamed(AppStrings.homeRoute);
+    Get.offAllNamed(AppStrings.layoutRoute);
   }
 }

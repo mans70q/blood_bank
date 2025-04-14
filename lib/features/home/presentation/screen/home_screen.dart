@@ -1,4 +1,5 @@
 import 'package:blood_bank/features/home/presentation/screen/article_screen.dart';
+import 'package:blood_bank/features/home/presentation/screen/donation_request_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/styles/colors.dart';
@@ -8,6 +9,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget buildTabScreen() {
+      return Scaffold(
+        body: ArticleScreen(),
+        floatingActionButton: FloatingActionButton(
+          shape: const CircleBorder(),
+          backgroundColor: AppColors.primary,
+          heroTag: "add",
+          onPressed: () {},
+          child: Icon(Icons.add, color: AppColors.white),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      );
+    }
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -26,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             unselectedLabelColor: AppColors.white,
           ),
         ),
-        body: TabBarView(children: [ArticleScreen(), ArticleScreen()]),
+        body: TabBarView(children: [buildTabScreen(), DonationRequestScreen()]),
       ),
     );
   }

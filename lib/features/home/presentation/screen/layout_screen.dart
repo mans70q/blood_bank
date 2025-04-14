@@ -13,18 +13,22 @@ class LayoutScreen extends StatelessWidget {
     return GetBuilder<LayoutController>(
       builder: (controller) {
         return Scaffold(
-          extendBody: true,
           body: controller.screens[controller.currentIndex.value],
-          bottomNavigationBar: BottomNavigationBar(
-            items: controller.items,
-            currentIndex: controller.currentIndex.value,
-            selectedIconTheme: IconThemeData(color: AppColors.white),
-            unselectedIconTheme: IconThemeData(color: AppColors.white),
-            type: BottomNavigationBarType.fixed,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            backgroundColor: AppColors.primary,
-            onTap: (index) => {controller.changeIndex(index)},
+          bottomNavigationBar: NavigationBarTheme(
+            data: NavigationBarThemeData(
+              height: 50,
+              indicatorColor: AppColors.secondary,
+              labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+              backgroundColor: AppColors.primary,
+              iconTheme: MaterialStateProperty.all(
+                IconThemeData(color: AppColors.white),
+              ),
+            ),
+            child: NavigationBar(
+              selectedIndex: controller.currentIndex.value,
+              onDestinationSelected: (index) => controller.changeIndex(index),
+              destinations: controller.items,
+            ),
           ),
         );
       },

@@ -2,6 +2,7 @@ import 'package:blood_bank/core/constant/strings.dart';
 import 'package:blood_bank/features/auth/presentation/screen/register_screen.dart';
 import 'package:blood_bank/features/onboarding/presentation/screen/onboarding_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
+
 import 'features/auth/presentation/screen/forget_password.dart';
 import 'features/auth/presentation/screen/login_screen.dart';
 import 'features/auth/presentation/screen/reset_password.dart';
@@ -21,5 +22,5 @@ List<GetPage<dynamic>>? getPages = [
     page: () => const ResetPassword(),
   ),
   //====================== home ======================
-  GetPage(name: AppStrings.homeRoute, page: () => const LayoutScreen()),
+  GetPage(name: AppStrings.layoutRoute, page: () => const LayoutScreen()),
 ];

@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ArticleCard extends StatelessWidget {
+class ArticleCard extends StatefulWidget {
   const ArticleCard({super.key});
+
+  @override
+  State<ArticleCard> createState() => _ArticleCardState();
+}
+
+class _ArticleCardState extends State<ArticleCard> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +45,15 @@ class ArticleCard extends StatelessWidget {
               child: CircleAvatar(
                 backgroundColor: Colors.white,
                 child: IconButton(
-                  icon: Icon(Icons.favorite),
-                  onPressed: () {},
+                  icon: Icon(
+                    isFavorite ? Icons.favorite : Icons.favorite_border,
+                  ),
+                  onPressed: () {
+                    // Handle favorite button press
+                    setState(() {
+                      isFavorite = !isFavorite;
+                    });
+                  },
                   color: Colors.red,
                 ),
               ),

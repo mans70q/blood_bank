@@ -10,7 +10,7 @@ class LoginController extends GetxController {
   bool rememberMe = false;
 
   void login() {
-    Get.offAllNamed(AppStrings.homeRoute);
+    Get.offAllNamed(AppStrings.layoutRoute);
   }
 
   void forgetPassword() {}

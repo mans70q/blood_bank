@@ -2,7 +2,7 @@ class AppStrings {
   // ============== routs ===============
   static const String loginRoute = '/login';
   static const String registerRoute = '/register';
-  static const String homeRoute = '/home';
+  static const String layoutRoute = '/layout';
   static const String forgetPasswordRoute = '/forgetPassword';
   static const String resetPasswordRoute = '/resetPassword';
 
