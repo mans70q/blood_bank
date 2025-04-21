@@ -1,5 +1,6 @@
 import 'package:blood_bank/features/home/controller/donation_request_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/styles/colors.dart';
@@ -18,6 +19,7 @@ class DonationRequestScreen extends GetView<DonationRequestController> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
+                    SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -66,6 +68,57 @@ class DonationRequestScreen extends GetView<DonationRequestController> {
                           ),
                         ),
                       ],
+                    ),
+                    SizedBox(height: 20),
+                    SizedBox(
+                      height: 630,
+                      width: double.infinity,
+                      child: ListView.separated(
+                        itemCount: 10,
+                        separatorBuilder:
+                            (context, index) => SizedBox(height: 20),
+                        itemBuilder:
+                            (_, index) => Slidable(
+                              endActionPane: ActionPane(
+                                motion: ScrollMotion(),
+                                children: [
+                                  SlidableAction(
+                                    foregroundColor: AppColors.primary,
+                                    icon: Icons.phone,
+                                    onPressed: (context) {},
+                                  ),
+                                  SlidableAction(
+                                    foregroundColor: AppColors.secondary,
+                                    icon: Icons.info,
+                                    onPressed: (context) {},
+                                  ),
+                                ],
+                              ),
+                              child: Card(
+                                elevation: 3,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(35),
+                                ),
+                                child: ListTile(
+                                  title: Text(
+                                    "اسم الحاله : محمد محروس",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.primary,
+                                    ),
+                                  ),
+
+                                  subtitle: Text(
+                                    "المستشفى : القصر العيني \n المدينة : المنصورة",
+                                  ),
+                                  leading: Icon(
+                                    Icons.person,
+                                    color: AppColors.primary,
+                                  ),
+                                ),
+                              ),
+                            ),
+                      ),
                     ),
                   ],
                 ),

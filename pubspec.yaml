@@ -38,6 +38,7 @@ dependencies:
   http: ^1.3.0
   flutter_native_splash: ^2.4.5
   get: ^4.7.2
+  flutter_slidable: 4.0.0
 
 dev_dependencies:
   flutter_test:
